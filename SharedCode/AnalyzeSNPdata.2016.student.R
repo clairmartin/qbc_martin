@@ -12,10 +12,10 @@
 
 # Set working directory:
 #change this to whatever you want
-setwd("~/Dropbox/Kirk_stuff/KEL_bootcamp/2016")
+setwd("/Users/jungminson/qbc_martin")
 
 # Load a data set
-snpsDataFrame=read.table('hapmap_CEU_r23a_chr2_ld.txt',header=TRUE)
+snpsDataFrame=read.table('hapmap_CEU_r23a_chr2_ld-1.txt',header=TRUE)
 
 # What are the dimensions of the data?
 dim(snpsDataFrame)

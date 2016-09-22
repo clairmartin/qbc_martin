@@ -47,7 +47,7 @@ min_val = floor(min(c(mean_heights_100, mean_heights_1000)));
 max_val = ceiling(max(c(mean_heights_100, mean_heights_1000)));
 
 # bins by 1
-bins <- seq(min_val,max_val,0.5);
+bins <- seq(min_val,max_val,1);
 
 # get counts
 ct100 <- hist(mean_heights_100,breaks=bins)$counts;
@@ -57,14 +57,15 @@ ct1000 <- hist(mean_heights_1000,breaks=bins)$counts;
 # Plotting
 
 # open pdf file
-pdf(file="la_heights_histo.pdf", width=6,height=6); 
+pdf(file="la_heights_histo .pdf", width=6,height=6); 
 
 # set plotting area & margins
-par(mfrow=c(1,1), mar=c(2, 2, 2, 2));
+par(mfrow=c(1,1), mar=c(3,3,3,3));
 
 # Print/draw
 # 100 = red, 1000 = blue
-  barplot(rbind(ct100,ct1000),col=c(2,4),beside=T,names.arg=seq(min_val,max_val,by=1),xlab="Average Height (inches)",ylab="Count", axes=T, axisnames=T)
+barplot(rbind(ct100,ct1000), col=c(2,4), beside=TRUE, names.arg=seq(min_val+1, max_val,by=1), xlab="Average Height (inches)", ylab="Count", axes=TRUE, axisnames=TRUE)
+#barplot(rbind(ct100,ct1000), col=c(2,4), beside=TRUE, xlab="Average Height (inches)", ylab="Count", axes=TRUE, axisnames=TRUE)
 
 # Add legend
 legend(1,350,c("n=100","n=1000"),col=c(2,4),lwd=4);
